@@ -1,0 +1,39 @@
+ngAfterViewInit - Audio player
+
+
+
+npm install --save wavesrfer.js
+
+
+ng g c domains/info/components/wave-audio
+
+
+/*---------------------------------------------*/
+
+
+@Input() audiorUrl!: string;
+
+
+"!" Se utiliza para no inicializar la variable
+
+
+
+
+/*--------Reemplazo de documentElementById---*/
+
+
+#referncia
+
+
+Ejemplo:
+
+<div>
+  <div #wave>
+    
+  </div>
+</div>
+
+
+
+  @ViewChild('wave') container!: ElementRef;
+

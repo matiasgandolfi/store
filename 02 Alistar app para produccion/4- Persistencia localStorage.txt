@@ -1,0 +1,37 @@
+Persistencia localStorage
+
+
+Effect() vigila cuando algo cambia
+
+
+
+
+
+//Esto avisa cada vez que hay un cambio en una señal
+
+
+  injector = inject(Injector)
+
+
+
+  ngOnInit() {
+    const storage = localStorage.getItem('rasks');
+    if(storage){
+      const tasks = JSON.parse(storage);
+      this.tasks.set(tasks);
+    }
+  }
+ 
+
+  trackTasks(){
+    effect(()=>{
+      const tasks = this.tasks();
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, {injector : this.injector})
+  }
+
+
+
+
+    <footer class="footer" *ngIf="tasksByFilter().length > 0">
+      <!-- This should be `0 items left` by default -->

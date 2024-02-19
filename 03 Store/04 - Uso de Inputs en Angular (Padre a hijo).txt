@@ -1,0 +1,24 @@
+Uso de Inputs en Angular
+
+Es la forma de pasar info de un padre a un hijo
+
+
+/*--------Product-----------------------------*/
+
+  @Input() img : string = "";
+  @Input() price : number = 0;
+  @Input() title : string = "";
+
+
+
+/*--------List--------------------------------*/
+
+
+
+<div class="grid grid-cols-3">
+
+  <app-product [title] ="'Producto 1'" [price]="12" img='https://picsum.photos/640/640?=23' />
+  <app-product [title] ="'Producto 2'" [price]="100" img='https://picsum.photos/640/640?=24' />
+  <app-product [title] ="'Producto 3'" [price]="1000" img='https://picsum.photos/640/640?=33' />
+
+</div>

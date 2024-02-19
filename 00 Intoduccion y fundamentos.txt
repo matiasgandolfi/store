@@ -1,0 +1,71 @@
+ng new todoapp --skip-tests
+
+
+
+import { CommonModule } from '@angular/common';
+
+imports: [RouterOutlet, CommonModule],
+
+
+  tasks = [
+    'Instalar el angular',
+    'Crear proyecyo',
+    'Renderizar componente'
+  ]
+
+
+<ul>
+  <li *ngFor="let task of tasks">
+    {{task}}
+
+  </li>
+</ul>
+
+
+/*-----------Binding - Dinamico-----------------*/
+<input type="text" value="Nicolas">
+
+
+//Property Binding en Angular
+<input type="text" [value]="name">
+}
+
+
+
+
+
+
+/*---------------Event Binding--------------*/
+
+
+  clickHandler(){
+    alert('Holis')
+  }
+
+  changeHandler(event : Event){
+    console.log(event)
+  }
+
+
+
+
+<button (click)="clickHandler()">Click me</button> <br>
+<button (dblclick)="clickHandler()">Double click me</button>
+
+<p>(change)</p>
+<input type="text" [value]="name" (change)="changeHandler($event)">
+
+
+
+
+
+/*------------------Event binding: keydown-------*/
+
+
+<p>(keydown)</p>
+<input type="text" [value]="name" (keydown)="keydown($event)">
+
+
+
+<p>(keydown con una tecla o atajo espesifico)</p>
+<input type="text" [value]="name" (keydown.shift.t)="clickHandler()">

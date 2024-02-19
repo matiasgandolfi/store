@@ -1,0 +1,29 @@
+  widthCtrl = new FormControl(50,{
+    nonNullable: true
+  });
+
+
+
+
+<svg>
+  <g>
+    <rect x="0" y="0" height="100" width="100" [attr.fill]="colorCtrl.value"/>
+  </g>
+</svg>
+<input type="number" [formControl]="widthCtrl">
+<span class="box" [style.width.px]="widthCtrl.value"></span>
+
+
+
+
+
+
+
+.container {
+  padding: 3rem;
+}
+.box{
+  height: 10px;
+  display: block;
+  background-color: red;
+}

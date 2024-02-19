@@ -1,0 +1,34 @@
+Uso de Outputs en Angular
+
+/*-------------Product component ----------------------*/
+
+  @Output() addToCart = new EventEmitter();
+
+
+
+  addToCartHandler(){
+    console.log('click from child');
+    this.addToCart.emit("hola este es un msg desde el hijo")
+  }
+
+
+//Muestra la info que trajo el padre desde los parametros
+  <button (click)="addToCartHandler()">Add to cart</button>
+
+
+
+/*-------------List------------------------------*/
+
+
+
+//Muestra info desde el hijo
+
+
+  fromChild(event : String){
+    console.log("Estamos en el padre")
+    console.log(event)
+  }
+
+
+
+  <app-product [title] ="'Producto 1'" [price]="12" img='https://picsum.photos/640/640?=23' (addToCart)="fromChild($event)" />

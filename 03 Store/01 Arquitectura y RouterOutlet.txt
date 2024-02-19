@@ -1,0 +1,37 @@
+Arquitectura
+
+
+Dentro app se almacenan los componentes en domains
+
+
+Por ejemplo
+
+domains
+	products
+		componentes
+		pages
+			list
+	info
+		componentes
+		pages
+	shared
+		componentes
+		pages
+
+
+
+/*------------app.routes.ts-------------------*/
+
+import { Routes } from '@angular/router';
+import { ListComponent } from './domains/products/pages/list/list.component';
+
+export const routes: Routes = [
+  {
+    path:'', component: ListComponent
+  }
+];
+
+
+/*-----------app.component.html---------------------*/
+
+<router-oulet></router-oulet>

@@ -1,0 +1,34 @@
+Uso de ngIf
+
+
+ <div *ngIf="1 !== 1">
+    My contend
+  </div>
+  <div *ngIf="name() === 'Nicolas'">
+    Soy nicolas
+  </div>
+
+
+
+  changeAge(event :Event){
+    const input = event.target as HTMLInputElement
+    const newValue = input.value;
+    this.person.update(prevState => {
+      return {
+        ...prevState,
+        age: parseInt(newValue, 10)
+      }
+    })
+  }
+
+
+
+
+
+
+/*--------------------------------------------*/
+
+ <input type="number" [value]="person().age" (change)="changeAge($event)">
+  <div *ngIf="person().name === 'Nicolas' && person().age > 18; else miBloque">
+    Soy nicolas y soy mayor de 18
+  </div>

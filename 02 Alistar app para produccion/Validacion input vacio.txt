@@ -1,0 +1,35 @@
+Manejo de formularios en Angular
+
+
+
+
+  newTaskCtrl = new FormControl('',{
+    nonNullable: true,
+    validators: [
+      Validators.required,
+    ]
+  });
+
+
+  changeHandler(event : Event){
+    if (this.newTaskCtrl.valid){
+      const value = this.newTaskCtrl.value.trim();
+	if (value !== ''){
+      		this.addTask(value);
+      		this.newTaskCtrl.setValue('');
+	}
+    }
+  }
+
+
+
+
+
+      <input
+        class="new-todo"
+        placeholder="Type new todo"
+        autofocus
+        type="text"
+        [formControl]="newTaskCtrl"
+        (keydown.enter)="changeHandler($event)"
+      />

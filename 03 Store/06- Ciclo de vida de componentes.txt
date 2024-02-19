@@ -1,0 +1,48 @@
+Ciclo de vida de componentes
+
+
+
+constructor:
+	-Es lo primero que se ejecuta
+	-No puede ser asincrono
+	-Se ejecuta antes del render (mostrar pantalla)
+
+
+ngOnChanges
+	-Se ejecuta antes del render 
+	(mostrar pantalla) pero tamien DURANTE
+
+	-SimpleChanges muestra cada cambio
+
+
+
+ngOnInit
+	-Despues del render
+	-Una vez
+	-Perfecto para cosas async, then, subs
+
+
+
+
+ngDoCheck
+	ngAfterContentInt
+	ngAfterContentChecked
+
+	ngAfterViewInit
+		-Corre despues del ngOnInit()
+		-Cuando los hijos de estos ya fueron
+		pintados
+
+
+	ngAfterViewCheck
+
+
+
+
+
+
+
+ngOnDestroy:
+	-Cuando el  componente es destruido
+	-Un buena forma de destruirlo es con
+	ngIf

@@ -1,0 +1,44 @@
+ng new store --standalone --skip-tests
+
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+
+
+/*-----tailwind.config.js-------------*/
+
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+    theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
+
+
+/*----------style.css---------------*/
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/*------------------------------------*/
+
+
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>

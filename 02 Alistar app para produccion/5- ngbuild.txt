@@ -1,0 +1,20 @@
+//cmd
+ng build = comprime para subir a produccion
+
+
+
+Si hay un archivo muy pesado desde angular.json se
+cambiar el maximo
+
+
+
+
+{
+	"type": "anyComponentStyle",
+        "maximumWarning": "2kb",
+        "maximumError": "5kb"
+}
+
+
+
+Crea una carpeta dist

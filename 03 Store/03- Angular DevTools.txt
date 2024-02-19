@@ -1,0 +1,4 @@
+Angular DevTools
+
+
+Inspeccionar-> Herramienrtas -> Angular

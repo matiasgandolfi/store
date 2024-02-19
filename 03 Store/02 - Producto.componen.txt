@@ -1,0 +1,43 @@
+Producto.component
+
+
+<div>
+  <img [src]="img" alt="image">
+  <h3>Producto 1</h3>
+  <p>$3000</p>
+</div>
+
+
+
+/*-----------------------------------------------*/
+
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-product',
+  standalone: true,
+  imports: [],
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.css'
+})
+export class ProductComponent {
+  img = "https://picsum.photos/640/640?r="+ Math.random()
+}
+
+
+
+
+
+
+/*--------------------List.Products---------------*/
+
+<div class="grid grid-cols-3">
+
+  <app-product />
+  <app-product />
+  <app-product />
+  <app-product />
+
+</div>

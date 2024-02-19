@@ -1,0 +1,16 @@
+Evitando memory leaks con ngDestroy
+
+
+
+//Contando segundo a segundo
+    this.counterRef = window.setInterval(()=> {
+      console.log('run inter')
+      this.counter.update(statePrev => statePrev + 1), 1000
+    })
+
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy');
+    console.log('-'.repeat(10));
+    window.clearInterval(this.counterRef)
+  }

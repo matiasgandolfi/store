@@ -1,0 +1,35 @@
+  filter = signal('all');
+//Esta segunda forma define cuales son los unicos parametros que acepta
+  filter = signal<'all' |  'pending' | 'completed'>('all');
+
+  tasksByFilter = computed(()=> {
+    const filter = this.filter();
+    const tasks = this.tasks();
+    if (filter === 'pending'){
+      return tasks.filter(task => !task.completed);
+    }
+    if (filter === 'completed'){
+      return tasks.filter(task => !task.completed);
+    }
+    return tasks;
+  })
+
+
+  changeFilter(filter : string){
+    this.filter.set(filter)
+  }
+
+
+
+
+      <ul class="filters">
+        <li>
+          <a (click)="changeFilter('all')" class="selected">All</a>
+        </li>
+        <li>
+          <a (click)="changeFilter('pending')" >Pending</a>
+        </li>
+        <li>
+          <a (click)="changeFilter('completed')">Completed</a>
+        </li>
+      </ul>

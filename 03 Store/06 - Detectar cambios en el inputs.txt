@@ -1,0 +1,18 @@
+Detectar cambios en el inputs
+
+
+
+  doSomething(){
+    console.log('change duration');
+  }
+
+
+  ngOnChanges(changes : SimpleChanges){
+    console.log('ngOnChanges')
+    console.log('-'.repeat(10));
+    console.log(changes);
+    const duration = changes['duration'];
+    if(duration && duration.currentValue !== duration.previousValue){
+      this.doSomething()
+    }
+  }
